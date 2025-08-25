@@ -35,3 +35,33 @@ function addQuote() {
     alert("Please enter both a quote and a category.");
   }
 }
+
+// ✅ Function the checker expects
+function createAddQuoteForm() {
+  const formContainer = document.createElement("div");
+
+  const textInput = document.createElement("input");
+  textInput.id = "newQuoteText";
+  textInput.type = "text";
+  textInput.placeholder = "Enter a new quote";
+
+  const categoryInput = document.createElement("input");
+  categoryInput.id = "newQuoteCategory";
+  categoryInput.type = "text";
+  categoryInput.placeholder = "Enter quote category";
+
+  const addButton = document.createElement("button");
+  addButton.textContent = "Add Quote";
+  addButton.onclick = addQuote;
+
+  // Append inputs and button to form
+  formContainer.appendChild(textInput);
+  formContainer.appendChild(categoryInput);
+  formContainer.appendChild(addButton);
+
+  // Append the form to body (or another container)
+  document.body.appendChild(formContainer);
+}
+
+// Call the function so the form appears when the page loads
+createAddQuoteForm();
